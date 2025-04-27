@@ -9,14 +9,24 @@
         width: 100px;
         height: 100px;
         background: coral;
-        transition: 1s;
+        transition: transform 1s ease-in, background 2s 1s linear; /* Druation Delay timing function*/
       }
-      .box:hover {
+      .box-action {
+        transform: translateX(300px);
+        background: blue;
+      }
+      /* .box:hover {
         transform: scale(2);
-      }
+      } */
     </style>
   </head>
   <body>
     <div class="box"></div>
+    <script>
+      const box = document.querySelector(".box");
+      box.addEventListener("click", () => {
+        box.classList.toggle("box-action");
+      });
+    </script>
   </body>
 </html>
