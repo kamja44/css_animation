@@ -54,4 +54,7 @@
 			bladeElement.classList.toggle('key-blade-flipped');
 		});
 	</script>
+	<script>
+	alert('key')
+	</script>
 </svg>
