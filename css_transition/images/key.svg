@@ -38,6 +38,8 @@
 			.key-blade-flipped {
 				transform: rotate(0deg);
 			}
+
+			.key-bl
 		</style>
 	</defs>
 
@@ -48,13 +50,10 @@
 	</g>
 
 	<script>
-		const keyBtnElement = document.querySelector('.key-btn');
-		const bladeElement = document.querySelector('.key-blade');
-		keyBtnElement.addEventListener('click', e => {
-			bladeElement.classList.toggle('key-blade-flipped');
-		});
-	</script>
-	<script>
-	alert('key')
+	const keyBtn = document.querySelector('.key-btn');
+	const keyBlade = document.querySelector('.key-blade')
+	keyBtn.addEventListener('click', () => {
+		keyBlade.classList.toggle('key-blade-flipped')
+	})
 	</script>
 </svg>
