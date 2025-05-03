@@ -26,18 +26,29 @@
     <script type="module">
       import Star from "./Star.js";
 
+      function set3DPoint(x, y, z) {
+        const scale = zModifier / (zModifier + z);
+        const x2D = x * scale;
+        const y2D = y * scale;
+
+        return [x2D, y2D, scale];
+      }
+
       const numberOfStars = 200;
 
       let x, y, z;
-      let scale;
       const zModifier = window.innerHeight;
 
       for (let i = 0; i < numberOfStars; i++) {
         x = Math.random() * window.innerWidth;
         y = Math.random() * window.innerHeight;
         z = Math.random() * zModifier;
-        scale = zModifier / (zModifier + z);
-        new Star(i, x, y, scale);
+
+        const pointFrom = set3DPoint(x, y, z);
+        const pointTom = set3DPoint(x, y, z - zModifier);
+
+        console.log(z, z - zModifier);
+        new Star(i);
       }
     </script>
   </body>
