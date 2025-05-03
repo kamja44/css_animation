@@ -29,10 +29,6 @@
         );
         offset-distance: 0;
         offset-rotate: auto 90deg;
-        transition: 5s;
-      }
-      .track:hover .car {
-        offset-distance: 1500px;
       }
     </style>
   </head>
@@ -46,5 +42,25 @@
         />
       </svg>
     </div>
+
+    <script>
+      const car = document.querySelector(".car");
+      const track = document.querySelector(".track");
+      const keyframes = [{ offsetDistance: 0 }, { offsetDistance: "100%" }];
+      const options = {
+        duration: 3000,
+        iterations: Infinity,
+      };
+
+      const animation = car.animate(keyframes, options);
+      animation.pause();
+      track.addEventListener("click", () => {
+        if (animation.playState === "paused") {
+          animation.play();
+        } else if (animation.playState === "running") {
+          animation.pause();
+        }
+      });
+    </script>
   </body>
 </html>
